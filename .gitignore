@@ -1,0 +1,68 @@
+# ==========================================
+# OS & IDEs
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# ==========================================
+# Angular (Frontend)
+# ==========================================
+# Dependencies
+**/node_modules/
+**/package-lock.json
+**/yarn.lock
+
+# Build output
+**/dist/
+**/.angular/
+
+# Logs and runtime
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.npm
+
+# Testing
+**/coverage/
+**/cypress/screenshots/
+**/cypress/videos/
+
+# Misc
+**/.editorconfig
+
+# ==========================================
+# Spring Boot (Backend)
+# ==========================================
+# Build output
+**/target/
+**/build/
+**/out/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Crash logs
+**/hs_err_pid*
+
+# Maven/Gradle wrapper (Optional: keep if you want others to build without installing Maven)
+!**/mvnw
+!**/mvnw.cmd
+!**/.mvn/wrapper/maven-wrapper.properties
+
+# ==========================================
+# Environment & Secrets
+# ==========================================
+**/.env
+**/.env.*.local
+**/application-local.properties
+**/application-local.yml
+
