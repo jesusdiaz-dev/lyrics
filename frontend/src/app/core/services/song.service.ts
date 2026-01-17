@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { songs } from '../constants/songs';
 import { Song } from '../constants/songs';
+import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SongService {
 
-  songs: Song[] = songs;
-
-  constructor() { 
+  constructor(private http: HttpClient) { 
 
   }
 
   getSongById(id: string) {
-    return this.songs.find(song => song.title === id);
+    console.log(id);
+    return this.http.get<Song>(`http://localhost:8080/api/songs/1`).pipe(
+      tap(response => console.log('Data received:', response))
+    );
   }
 }

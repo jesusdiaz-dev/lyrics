@@ -38,4 +38,9 @@ public class SongService {
         return Mapper.toDto(this.songRepo.save(songEntity));
     }
 
+    public SongDto getSongById(Long id) {
+        Song song = this.songRepo.findById(id).orElseThrow(() -> new RuntimeException("Song not found"));
+        return Mapper.toDto(song);
+    }
+
 }

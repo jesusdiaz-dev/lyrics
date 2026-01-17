@@ -10,14 +10,9 @@ import { Song } from '../../core/constants/songs';
 })
 export class SongLyric {
 
-   songId = input<string>(''); 
+  title = input.required<string>();
+  lyric = input.required<string>();
 
-   song : Song | undefined = undefined;
-
-   songService = inject(SongService);
-
-   ngOnInit() {
-    this.song = this.songService.getSongById(this.songId()) || undefined;
-   }
+  
 
 }

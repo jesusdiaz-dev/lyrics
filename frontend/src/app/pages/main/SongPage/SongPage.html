@@ -1,0 +1,25 @@
+<main class="flex justify-center w-screen overflow-hidden relative">
+    @if(song()){
+    <app-song-lyric 
+            #card1
+            class="bg-black text-white w-[100%] px-8 
+            transition duration-400 transform " 
+            appSwipe 
+            (swipeleft)="handleSwipe('english', 'toRight')"
+            [title]="song()?.author || ''"
+            [lyric]="song()?.englishVersion || ''"
+            >
+    </app-song-lyric>
+
+
+    <app-song-lyric
+        #card2
+        appSwipe
+        (swiperight)="handleSwipe('spanish', 'toLeft')" 
+        class="bg-red-500 text-white absolute w-[100%] left-[100%] px-8  top-0
+        transform transition duration-400  "
+        [title]="song()?.author || ''"
+        [lyric]="song()?.spanishVersion || ''"
+    ></app-song-lyric>
+}
+</main>
